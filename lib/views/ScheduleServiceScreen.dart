@@ -64,6 +64,15 @@ class _ScheduleServiceScreenState extends State<ScheduleServiceScreen> {
     );
   }
 
+  DateTime? xxx;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    xxx = _selectedDate;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,7 +129,6 @@ class _ScheduleServiceScreenState extends State<ScheduleServiceScreen> {
                 } else {
                   _showServiceScheduledSnackBar(DateTime(
                     _selectedDate!.year,
-
                     _selectedDate!.month,
                     _selectedDate!.day,
                     _selectedTime!.hour,
@@ -140,8 +148,7 @@ class _ScheduleServiceScreenState extends State<ScheduleServiceScreen> {
               child: Text('Schedule Service'),
             ),
             SizedBox(height: 20),
-        
-              ElevatedButton(
+            ElevatedButton(
               onPressed: _navigateToScheduledServicesScreen,
               child: Text('View scheduled services'),
             ),
@@ -151,5 +158,3 @@ class _ScheduleServiceScreenState extends State<ScheduleServiceScreen> {
     );
   }
 }
-
-
